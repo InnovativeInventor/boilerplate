@@ -7,6 +7,7 @@ sudo apt-get install fish -y
 git clone https://github.com/InnovativeInventor/dotfiles
 mv dotfiles/.vimrc ~/.vimrc
 mv dotfiles/.vim ~/.vim
+git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 vim +PluginInstall +qall
 mkdir -p ~/.Config
 mv -n dotfiles/fish ~/.Config/fish
