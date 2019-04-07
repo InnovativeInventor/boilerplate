@@ -20,8 +20,8 @@ git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 vim +PluginInstall +qall
 
 ## Getting fish setup
-mkdir -p ~/.Config
-mv -n dotfiles/fish ~/.Config/fish
+mkdir -p ~/.config
+mv -n dotfiles/fish ~/.config/fish
 curl -L https://get.oh-my.fish | fish
 curl -L https://raw.githubusercontent.com/InnovativeInventor/boilerplate/master/setup/fish-setup.fish
 fish fish-setup.fish
