@@ -21,7 +21,7 @@ vim +PluginInstall +qall
 
 ## Getting fish setup
 mkdir -p ~/.config
-mv -n dotfiles/fish ~/.config/fish
+cp -rn dotfiles/fish ~/.config/
 curl -L https://get.oh-my.fish | fish
 curl -L https://raw.githubusercontent.com/InnovativeInventor/boilerplate/master/setup/fish-setup.fish
 fish fish-setup.fish
