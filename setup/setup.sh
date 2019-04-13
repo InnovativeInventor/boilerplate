@@ -1,8 +1,7 @@
 sudo apt-get install software-properties-common curl -y
 sudo apt-add-repository ppa:fish-shell/release-3
 sudo apt-get update
-sudo apt-get install neovim -y
-sudo apt-get install fish -y
+sudo apt-get install neovim fish opam -y
 
 ## For Pyenv 
 ## TODO: Check if this is all necessary
@@ -35,3 +34,7 @@ git clone https://github.com/pyenv/pyenv-virtualenv.git $(pyenv root)/plugins/py
 echo "Add Fura Code Retina Nerd Font Complete to your terminal font"
 mkdir -p ~/.local/share/fonts
 cd ~/.local/share/fonts && curl -fLo "Fura Code Retina Nerd Font Complete.otf" https://github.com/ryanoasis/nerd-fonts/raw/master/patched-fonts/FiraCode/Retina/complete/Fura%20Code%20Retina%20Nerd%20Font%20Complete.otf
+
+## Logic stuff
+opam init
+opam install coqide
