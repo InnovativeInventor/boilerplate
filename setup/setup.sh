@@ -41,3 +41,6 @@ opam install depext -y
 opam depext conf-gtksourceview.2 -y # Make sure this is up to date
 opam depext conf-m4.1 -y            # Make sure this is up to date
 opam install coqide -y
+
+sudo apt install python3-dev python3-pip python3-setuptools
+sudo pip3 install thefuck
