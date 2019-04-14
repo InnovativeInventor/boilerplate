@@ -35,6 +35,9 @@ echo "Add Fura Code Retina Nerd Font Complete to your terminal font"
 mkdir -p ~/.local/share/fonts
 cd ~/.local/share/fonts && curl -fLo "Fura Code Retina Nerd Font Complete.otf" https://github.com/ryanoasis/nerd-fonts/raw/master/patched-fonts/FiraCode/Retina/complete/Fura%20Code%20Retina%20Nerd%20Font%20Complete.otf
 
-## Logic stuff
-opam init
-opam install coqide
+## OCaml/Logic stuff
+opam init -y
+opam install depext -y
+opam depext conf-gtksourceview.2 -y # Make sure this is up to date
+opam depext conf-m4.1 -y            # Make sure this is up to date
+opam install coqide -y
