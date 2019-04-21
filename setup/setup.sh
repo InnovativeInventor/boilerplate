@@ -1,6 +1,6 @@
 sudo apt-get install software-properties-common curl -y
 echo 'deb http://download.opensuse.org/repositories/shells:/fish:/release:/3/Debian_9.0/ /' > /etc/apt/sources.list.d/shells:fish:release:3.list
-curl -L https://download.opensuse.org/repositories/shells:fish:release:3/Debian_9.0/Release.key | sudo apt-key add -y -
+curl -L https://download.opensuse.org/repositories/shells:fish:release:3/Debian_9.0/Release.key | sudo apt-key add -
 sudo apt-get update
 sudo apt-get install neovim fish opam -y
 
