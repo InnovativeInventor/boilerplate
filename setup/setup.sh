@@ -3,6 +3,7 @@ echo 'deb http://download.opensuse.org/repositories/shells:/fish:/release:/3/Deb
 curl -L https://download.opensuse.org/repositories/shells:fish:release:3/Debian_9.0/Release.key | sudo apt-key add -
 sudo apt-get update
 sudo apt-get install neovim fish opam -y
+curl -fsSL https://get.docker.com | sudo sh
 
 ## For Pyenv 
 ## TODO: Check if this is all necessary
