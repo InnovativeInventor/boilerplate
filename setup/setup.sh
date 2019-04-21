@@ -4,6 +4,7 @@ curl -L https://download.opensuse.org/repositories/shells:fish:release:3/Debian_
 sudo apt-get update
 sudo apt-get install neovim fish opam -y
 curl -fsSL https://get.docker.com | sudo sh
+sudo usermod -aG docker $USER
 
 ## For Pyenv 
 ## TODO: Check if this is all necessary
