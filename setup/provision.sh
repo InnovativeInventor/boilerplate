@@ -18,6 +18,7 @@ git clone https://github.com/InnovativeInventor/dict4schools ~/git/dict4schools
 ## Getting Vim ready
 git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 curl -L https://raw.githubusercontent.com/InnovativeInventor/dotfiles/master/.vimrc -o ~/.vimrc
+curl -L https://raw.githubusercontent.com/InnovativeInventor/dotfiles/master/.vimrc -o /usr/share/vim/vimrc
 echo 'set rtp+=/home/linuxbrew/.linuxbrew/opt/fzf' >> .vimrc
 vim +PluginInstall +qall
 
@@ -39,11 +40,20 @@ source ~/.profile
 sleep 1
 rm fish-install.sh
 
+## Getting rust ready
+curl https://sh.rustup.rs -sSf | sh -s -- -y 
+
+## Installing my utilities
+cargo install eva
+
 ## Getting Docker setup
-curl -fsSL https://get.docker.com -o docker.sh
-sudo sh docker.sh
-sudo usermod -aG docker $USER
-rm docker.sh
+if [ "$1" != "" ]; then
+    echo "Installing Docker . . ."
+    curl -fsSL https://get.docker.com -o docker.sh
+    sudo sh docker.sh
+    sudo usermod -aG docker $USER
+    rm docker.sh
+fi
 
 ## Entering fish
 echo "Finished provisioning!"
