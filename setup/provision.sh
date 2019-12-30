@@ -6,7 +6,9 @@ sudo apt-get install screen build-essential curl file git -y
 echo | sh -c "$(curl -fsSL https://raw.githubusercontent.com/Linuxbrew/install/master/install.sh)"
 echo 'eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)' >> ~/.profile
 eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)
-brew install gcc fish neovim exa fd fzf
+source ~/.profile
+
+brew install gcc fish neovim exa fd fzf golang
 yes | /home/linuxbrew/.linuxbrew/opt/fzf/install
 
 source ~/.profile
@@ -18,13 +20,15 @@ git clone https://github.com/InnovativeInventor/dict4schools ~/git/dict4schools
 ## Getting Vim ready
 git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 curl -L https://raw.githubusercontent.com/InnovativeInventor/dotfiles/master/.vimrc -o ~/.vimrc
-curl -L https://raw.githubusercontent.com/InnovativeInventor/dotfiles/master/.vimrc -o /usr/share/vim/vimrc
+sudo curl -L https://raw.githubusercontent.com/InnovativeInventor/dotfiles/master/.vimrc -o /usr/share/vim/vimrc
 echo 'set rtp+=/home/linuxbrew/.linuxbrew/opt/fzf' >> .vimrc
 vim +PluginInstall +qall
 
 ## Setting up fish
 sudo su -c 'echo "/home/linuxbrew/.linuxbrew/bin/fish" >> /etc/shells'
 echo 'set -g fish_user_paths "/home/linuxbrew/.linuxbrew/bin" $fish_user_paths' >> ~/.config/fish/config.fish
+echo 'set -x -U GOPATH $HOME/go' >> ~/.config/fish/config.fish
+echo 'set -x PATH $PATH /usr/local/go/bin $GOPATH/bin' >> ~/.config/fish/config.fish
 sudo su -c "chsh -s /home/linuxbrew/.linuxbrew/bin/fish root"
 sudo su -c "chsh -s /home/linuxbrew/.linuxbrew/bin/fish $1"
 sudo su -c "chsh -s /home/linuxbrew/.linuxbrew/bin/fish $USER"
@@ -42,9 +46,13 @@ rm fish-install.sh
 
 ## Getting rust ready
 curl https://sh.rustup.rs -sSf | sh -s -- -y 
+source $HOME/.cargo/env
 
 ## Installing my utilities
 cargo install eva
+
+## Get gotop
+go get github.com/cjbassi/gotop
 
 ## Getting Docker setup
 if [ "$1" != "" ]; then
